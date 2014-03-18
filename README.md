@@ -5,4 +5,4 @@
 
 在目錄下打 `sbt update compile run`
 
-目前是寫死讀取 test.pdf
+目前是按照 output.csv 讀取 pdf/ 底下的檔案。
