@@ -20,7 +20,7 @@ object Extractor extends App {
     
   })
 
-  files.par.foreach((f: PDFFile) => {
+  files.foreach((f: PDFFile) => {
     println(s"processing: ${f.id}")
     val doc = PDDocument.load(f.file)
     val printer = new PrintTextLocations(new File(s"output/${f.id}.csv"))
