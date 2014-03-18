@@ -31,6 +31,7 @@ object Extractor extends App {
     if (contents != null) {
       printer.processStream(page, page.findResources, page.getContents.getStream)
     }
+    printer.close
     doc.close
   })
 }
@@ -55,5 +56,9 @@ class PrintTextLocations(val f: File) extends PDFTextStripper {
                 text.getHeightDir + "," +
                 text.getWidthOfSpace + "," +
                 text.getWidthDirAdj)
+  }
+
+  def close = {
+    out.close
   }
 }
